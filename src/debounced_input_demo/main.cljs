@@ -1,9 +1,9 @@
 
 (ns debounced-input-demo.main
   (:require [respo.core :refer [render! clear-cache! falsify-stage! render-element]]
-            [respo.util.format :refer [mute-element]]
             [debounced-input-demo.comp.container :refer [comp-container]]
-            [cljs.reader :refer [read-string]]))
+            [cljs.reader :refer [read-string]]
+            [devtools.core :as devtools]))
 
 (defn dispatch! [op op-data] )
 
@@ -22,11 +22,12 @@
 
 (defn -main! []
   (enable-console-print!)
+  (devtools/install!)
   (if (not (empty? ssr-stages))
     (let [target (.querySelector js/document "#app")]
       (falsify-stage!
        target
-       (mute-element (render-element (comp-container @store-ref ssr-stages) states-ref))
+       (render-element (comp-container @store-ref ssr-stages) states-ref)
        dispatch!)))
   (render-app!)
   (add-watch store-ref :changes render-app!)

@@ -3,14 +3,15 @@
   :resource-paths #{"polyfill"}
   :dependencies '[[org.clojure/clojure       "1.8.0"       :scope "test"]
                   [org.clojure/clojurescript "1.9.293"     :scope "test"]
-                  [org.clojure/core.async    "0.2.395"     :scope "test"]
+                  [andare                    "0.3.0"       :scope "test"]
                   [adzerk/boot-cljs          "1.7.228-1"   :scope "test"]
                   [adzerk/boot-reload        "0.4.12"      :scope "test"]
                   [cirru/boot-stack-server   "0.1.21"      :scope "test"]
                   [adzerk/boot-test          "1.1.2"       :scope "test"]
+                  [binaryage/devtools        "0.8.2"       :scope "test"]
                   [mvc-works/hsl             "0.1.2"]
                   [respo/ui                  "0.1.3"]
-                  [respo                     "0.3.29"]])
+                  [respo                     "0.3.31"]])
 
 (require '[adzerk.boot-cljs   :refer [cljs]]
          '[adzerk.boot-reload :refer [reload]]

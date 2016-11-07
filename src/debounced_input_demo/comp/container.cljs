@@ -7,7 +7,7 @@
             [respo.comp.text :refer [comp-text]]
             [debounced-input-demo.comp.widget :refer [comp-widget]]))
 
-(defn render []
+(defn render [store ssr-stages]
   (fn [state mutate!] (div {:style (merge ui/global {:padding 16})} (comp-widget))))
 
 (def comp-container (create-comp :container render))
